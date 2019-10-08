@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -13,17 +14,20 @@ extern const char ETX;
 template <typename T>
 class matrix {
 	public:
-		matrix(int n_Nrows, int n_Ncols){
+		matrix(int n_Ncols, int n_Nrows){
 			Nrows = n_Nrows;
 			Ncols = n_Ncols;
 
 			buf = new T *[Ncols];
-			for(int i = 1; i<Ncols; i++)
+			for(int i = 0; i<Ncols; i++)
 				buf[i] = new T[Nrows];
 		}
 
 		~matrix(){
-			delete [] buf[0];
+			for(int i = 0; i <Ncols; i++)
+			{
+				delete [] buf[i];
+			}
 			delete [] buf;
 		}
 
@@ -37,13 +41,15 @@ class matrix {
 
 struct pixel {
 	int row, col;
-	pixel() { row = 0; col=0;}
+	pixel() { row=0; col=0;}
 	pixel(int n_row, int n_col) { row = n_row; col = n_col;}
 };
 
 struct RGB {
-	char R, G, B;
-	RGB() { R=0; G = 0; B = 0;}
+	unsigned char R;
+	unsigned char G;
+	unsigned char B;
+	RGB() { R=0; G=0; B=0;}
 };
 
 class ppm {
@@ -51,8 +57,8 @@ class ppm {
 		ppm(){
 			image = NULL;
 		}
-		void read(const char *fname);
-		void write(const char *fname);
+		void read(const char *);
+		void write(const char *);
 
 		RGB * operator[] (int i) { return (*image)[i]; }
 		int get_Nrows() const { return image->get_Nrows(); }
@@ -63,7 +69,15 @@ class ppm {
 		int w, h, maxvalue;
 
 		matrix<RGB> * image;
-		void new_image(int n_w, int n_h);
+		void new_image(int, int);
+};
+
+class rnumgen {
+	public:
+		rnumgen(int seedvalue, vector<int> &v);
+		int rand();
+	private:
+		vector<float> F;
 };
 
 #endif

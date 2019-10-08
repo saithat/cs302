@@ -1,0 +1,39 @@
+decode is true
+fname read file name
+created ppm img
+passed fname to img.read()
+pixel list set
+psize: 118500
+Before: Red: 00001010 Green: 00001011 Blue: 00000000
+ row: 0 col: 0
+Red
+After: Red: 00001010 Green: 00001011 Blue: 00000000
+
+Green
+After: Red: 00001010 Green: 00001011 Blue: 00000000
+
+Blue
+After: Red: 00001010 Green: 00001011 Blue: 00000000
+
+Red
+After: Red: 00001010 Green: 00001011 Blue: 00000000
+
+Green
+After: Red: 00001010 Green: 00001011 Blue: 00000000
+
+Blue
+After: Red: 00001010 Green: 00001011 Blue: 00000000
+
+Red
+After: Red: 00001010 Green: 00001011 Blue: 00000000
+
+Before: Red: 00110011 Green: 01111001 Blue: 00001111
+ row: 0 col: 14
+Green
+After: Red: 00110011 Green: 01111001 Blue: 00001111
+
+Blue
+After: Red: 00110011 Green: 01111001 Blue: 00001111
+
+end has been reached
+

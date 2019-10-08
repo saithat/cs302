@@ -1,0 +1,2 @@
+hellokey_len for rng: 5
+keylen: 5 k size: 6
