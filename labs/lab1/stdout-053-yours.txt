@@ -1,2 +1,0 @@
-usage: ./QsortB -stl | -rpivot [k0 k1] < file.txt
-argc error
