@@ -8,6 +8,10 @@
 #include <sstream>
 #include <math.h>
 #include <stdlib.h>
+#include <stack>
+#include <limits.h>
+#include <limits>
+#include <map>
 using namespace std;
 class city
 {
@@ -64,7 +68,7 @@ class travelcost
 
 				}
 			}
-			cout << "finished with travelcost reading in" << endl;
+			//cout << "finished with travelcost reading in" << endl;
 		}
 		float get_distance(float lambda, float theta, float theta1, float theta2)
 		{
@@ -81,7 +85,7 @@ class travelcost
 		}
 		float operator()(int mode, int i, int j)
 		{
-			if(i < j)
+			if(j > i)
 			{
 				int tmp = i;
 				i = j;
@@ -93,10 +97,11 @@ class travelcost
 		vector<float> table[2];
 };
 
-void read_cityinfo(vector<city> &v) {
+void read_cityinfo(vector<city> &v, map<string, int> &index) {
 	ifstream fin;
 	fin.open("city_list.txt");
 	string line;
+	int count = 0;
 	while(getline(fin, line))
 	{
 		city tmp;
@@ -106,6 +111,8 @@ void read_cityinfo(vector<city> &v) {
 			stringstream ss(line);
 			ss >> tmp;
 			v.push_back(tmp);
+			index.insert(pair<string, int>(tmp.get_name(),count));
+			count++;
 			//cout << count++ << endl;
 		}
 		//cout << count++ << endl;
@@ -312,22 +319,108 @@ void write_citygraph(vector<city> &v, travelcost &tc, vector<vector<int> > &grap
 {
 	ofstream fout;
 	fout.open("city_graph.txt");
-	cout << "CITY GRAPH: \n";
+	fout << "CITY GRAPH: \n";
 	for(int i = 0; i < graph.size(); i++)
 	{
-		cout << endl;
-		cout << setw(3) << right << i << " " << v[i].get_name() << endl;
+		fout << endl;
+		fout << setw(3) << right << i << " " << v[i].get_name() << endl;
 
 		for(int j = 0; j < graph[i].size(); j++)
 		{
 			int id = graph[i][j];
 
-			cout << setw(6) << right << id << " " << setw(18) << left << v[id].get_name() << " " << fixed << setprecision(1)
+			fout << setw(6) << right << id << " " << setw(18) << left << v[id].get_name() << " " << fixed << setprecision(1)
 			<< setw(7) << right << tc(0, i, id) << " miles " << setw(5) << right << tc(1, i, id) << " hours" << endl;
 		}
 	}
 }
-//dijkstra_route() { }
+
+void dijkstra_route(int source, int sink, vector<city> &V, vector<vector<int> > &E, travelcost &W, vector<int> &vdist, vector<int> & vlink, int mode) 
+{
+  vector<string> vcolor;
+  vcolor.assign(V.size(), "WHITE");
+  /*for(vector<string>::iterator it = vcolor.begin(); it != vcolor.end(); it++)
+			{
+				cout << "color: " << *it << endl;
+			}
+*/
+  vdist.assign(V.size(), numeric_limits<int>::max());
+  //cout << "initial vdist: " << vdist.at(0) << endl;
+  //cout << "numeric limit of int: " << numeric_limits<int>::max() << endl;
+  vdist[source] = 0;
+  vlink.assign(V.size(), -1);
+  vlink[source] = source;
+  while (1) {
+    int next_i = -1;
+    float mindist = numeric_limits<int>::max();
+    for (int i=0; i<(int)vcolor.size(); i++) {
+      if ((vcolor[i].compare("WHITE")==0) && mindist > vdist[i]) {
+        next_i = i;
+        mindist = vdist[i];
+      }
+    }
+    int i = next_i;
+	//cout << "i in creating route: " << i << endl;
+    if (i == -1)
+      return;
+    vcolor[i] = "BLACK";
+    if (i == sink)
+      break;
+    for (int k=0; k<(int)E[i].size(); k++) {
+      int j = E[i][k];
+      float wij = W(mode, i, j);
+	  //cout << "wij: " << wij << endl;
+      if (vcolor[j].compare("WHITE")==0) {
+        if (vdist[j] > (vdist[i] + wij)) {
+          vdist[j] = vdist[i] + wij;
+		  //cout << "Before: i: " << i << " j: " << j << " vdist[j]: " << vdist[j] << endl;
+          vlink[j] = i;
+        }
+      }
+    }
+  }
+ /*for(vector<string>::iterator it = vcolor.begin(); it != vcolor.end(); it++)
+			{
+				cout << "color: " << *it << endl;
+			}*/
+}
+
+void show_route(int source, int sink, vector<city> &V, vector<int> &vdist, vector<int> &vlink, travelcost &tc) {
+  float total_dist = 0.0;
+  float total_time = 0.0;
+  int i_prev = -1;
+  if (vdist[sink] == INT_MAX) {
+    cout << "No path from " << V[source] 
+         << " to " << V[sink] << "\n";
+    return;
+  }
+  //cout << "path exists" << endl;
+  stack<int> S;
+  for (int i=sink; i != source; i=vlink[i])
+  {
+    S.push(i);
+	//cout << i << endl;
+  }
+  S.push(source);
+  while (!S.empty()) {
+    int i=S.top();
+    S.pop();
+	//cout << "After: i: " << i << " vdist[j]: " << vdist[i] << endl;
+	if(i_prev > -1)
+		total_time += tc(1, i, i_prev);
+		total_dist += tc(0, i, i_prev);
+    cout << setw(7) << right << fixed << setprecision(1) <<  total_dist << " miles " << setw(5) << right << total_time << " hours : "
+		 << setw(2) << right << i << " " << setw(18) << left << V[i].get_name();
+		 if(i_prev > -1)
+		 {
+		 cout << " " << setw(6) << right << fixed << setprecision(1) << tc(0, i, i_prev) << " miles " << setw(5) 
+		      << right <<fixed << setprecision(1) << tc(1, i, i_prev) << " hours";
+		 }
+		 cout << "\n";
+	i_prev = i;
+  }
+  cout << endl;
+}
 
 int main(int argc, char *argv[])
 {
@@ -343,7 +436,18 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
-	if(string(argv[1]) != "-graphinfo"){
+	int mode = 0;
+	bool prompt = false;
+
+	if(string(argv[1]) == "-distance") 
+	{
+		prompt = true;
+	} else if (string(argv[1]) == "-time")
+	{
+		prompt = true;
+		mode = 1;
+	} else if(string(argv[1]) != "-graphinfo")
+	{
 		cerr << usage << endl;
 		return 1;
 	}
@@ -351,13 +455,14 @@ int main(int argc, char *argv[])
   //object declarations
 
   vector<city> list;
-  read_cityinfo(list);
+  map<string, int> index;
+  read_cityinfo(list, index);
   write_cityinfo(list);
-	//cout << "on to travelcosts" << endl;
+
   travelcost tc(list);
-  //cout << "writing travel distance" << endl;
+
 	write_traveldistance(list, tc);
-	//cout << "writing traveltime" << endl;
+
 	write_traveltime(list, tc);
 
   //set up travelcosts
@@ -365,6 +470,41 @@ int main(int argc, char *argv[])
     create_citygraph(list, tc, graph);
 	write_citygraph(list, tc, graph);
 
+	vector<int> vdist;
+	vector<int> vlink;
+
+
+	if(prompt)
+	{
+		while(1)
+		{
+			cout << "Enter> ";
+			string c1, c2;
+
+			cin >> c1 >> c2;
+			if(cin.eof())
+				break;
+			map<string, int>::iterator it1, it2;
+			it1 = index.find(c1);
+			it2 = index.find(c2);
+			if(it1 == index.end())
+			{
+				it1 = index.upper_bound(c1);
+			}
+			if(it2 == index.end())
+			{
+			it2 = index.upper_bound(c2);
+			}
+			//cout << it1->second << endl;
+			//cout << it2->second << endl;
+			dijkstra_route(it1->second, it2->second, list, graph, tc, vdist, vlink, mode);
+			/*for(vector<int>::iterator it = vdist.begin(); it != vdist.end(); it++)
+			{
+				cout << *it << endl;
+			}*/
+			show_route(it1->second, it2->second, list, vdist, vlink, tc);
+		}
+	}
   //while (not done) {
 	//ask for form, to cities
     //dijkstra_route(from,to) 

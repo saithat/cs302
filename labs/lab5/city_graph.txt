@@ -1,4 +1,4 @@
-CITY GRAPH:
+CITY GRAPH: 
 
   0 Cairo_EG
      1 Johannesburg_SA     3925.0 miles   7.5 hours
