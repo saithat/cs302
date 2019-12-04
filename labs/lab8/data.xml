@@ -1,0 +1,361 @@
+<?XML version="1.0" encode="ASCII"?>
+
+<student>
+  <name="Terry Aki"/>
+  <category="Freshman"/>
+  <course="CS6 Web Weaving" gp="3"/>
+  <course="CS2 Pointy Pointers" gp="2.5"/>
+</student>
+
+<student>
+  <name="Molly Koehl"/>
+  <category="Sophomore"/>
+  <course="CS5 Reading Core Dumps" gp="3.5"/>
+  <course="MA2 Boohlean Logic" gp="3"/>
+  <course="CS4 Rigorous Programming" gp="3.5"/>
+</student>
+
+<student>
+  <name="Myles Long"/>
+  <category="Sophomore"/>
+  <course="CS5 Reading Core Dumps" gp="4"/>
+</student>
+
+<student>
+  <name="Leigh King"/>
+  <category="Junior"/>
+  <course="CS1 Problem Solving" gp="2"/>
+  <course="CS2 Pointy Pointers" gp="4"/>
+  <course="PH1 Perms and Waves" gp="4"/>
+</student>
+
+<student>
+  <name="Les Moore"/>
+  <category="Sophomore"/>
+  <course="CS4 Rigorous Programming" gp="2.5"/>
+  <course="CS6 Web Weaving" gp="2.5"/>
+  <course="CS3 Static Programming" gp="2.5"/>
+</student>
+
+<faculty>
+  <name="Sarah Bellum"/>
+  <category="Associate Professor"/>
+  <course="MA1 Math for Chumps"/>
+  <course="CS1 Problem Solving"/>
+  <course="CS2 Pointy Pointers"/>
+  <course="CS6 Web Weaving"/>
+</faculty>
+
+<student>
+  <name="Otto Graff"/>
+  <category="Freshman"/>
+  <course="PH2 Particle Bored" gp="3.5"/>
+  <course="CS4 Rigorous Programming" gp="4"/>
+</student>
+
+<student>
+  <name="Emma Lusa"/>
+  <category="Senior"/>
+  <course="CS1 Problem Solving" gp="4"/>
+  <course="PH1 Perms and Waves" gp="2"/>
+  <course="CS3 Static Programming" gp="4"/>
+</student>
+
+<student>
+  <name="Dick Tator"/>
+  <category="Junior"/>
+  <course="CS5 Reading Core Dumps" gp="2.5"/>
+  <course="PH1 Perms and Waves" gp="2"/>
+  <course="CS2 Pointy Pointers" gp="3.5"/>
+</student>
+
+<student>
+  <name="Lou Tenant"/>
+  <category="Junior"/>
+  <course="MA2 Boohlean Logic" gp="2.5"/>
+  <course="PH2 Particle Bored" gp="2.5"/>
+  <course="CS4 Rigorous Programming" gp="4"/>
+</student>
+
+<student>
+  <name="Sue Yoo"/>
+  <category="Senior"/>
+  <course="PH2 Particle Bored" gp="2.5"/>
+  <course="CS2 Pointy Pointers" gp="4"/>
+  <course="CS6 Web Weaving" gp="2"/>
+</student>
+
+<student>
+  <name="Brighton Early"/>
+  <category="Senior"/>
+  <course="PH1 Perms and Waves" gp="3.5"/>
+  <course="MA2 Boohlean Logic" gp="3.5"/>
+  <course="CS1 Problem Solving" gp="3.5"/>
+</student>
+
+<student>
+  <name="Sandy Banks"/>
+  <category="Sophomore"/>
+  <course="CS3 Static Programming" gp="3.5"/>
+  <course="MA1 Math for Chumps" gp="3.5"/>
+  <course="CS5 Reading Core Dumps" gp="3"/>
+</student>
+
+<student>
+  <name="Holly Wood"/>
+  <category="Freshman"/>
+  <course="MA1 Math for Chumps" gp="4"/>
+  <course="PH2 Particle Bored" gp="3.5"/>
+  <course="CS6 Web Weaving" gp="2.5"/>
+</student>
+
+<student>
+  <name="Isadore Bell"/>
+  <category="Senior"/>
+  <course="CS2 Pointy Pointers" gp="2.5"/>
+</student>
+
+<student>
+  <name="Warren Peace"/>
+  <category="Sophomore"/>
+  <course="CS5 Reading Core Dumps" gp="4"/>
+  <course="CS4 Rigorous Programming" gp="3"/>
+  <course="CS3 Static Programming" gp="4"/>
+</student>
+
+<student>
+  <name="Anna Fender"/>
+  <category="Senior"/>
+  <course="CS1 Problem Solving" gp="3.5"/>
+  <course="MA2 Boohlean Logic" gp="2"/>
+</student>
+
+<faculty>
+  <name="Justin Case"/>
+  <category="Full Professor"/>
+  <course="PH1 Perms and Waves"/>
+  <course="CS1 Problem Solving"/>
+  <course="CS2 Pointy Pointers"/>
+  <course="MA1 Math for Chumps"/>
+</faculty>
+
+<student>
+  <name="Robin Banks"/>
+  <category="Junior"/>
+  <course="CS1 Problem Solving" gp="2"/>
+  <course="MA2 Boohlean Logic" gp="2"/>
+  <course="MA1 Math for Chumps" gp="3.5"/>
+</student>
+
+<student>
+  <name="Will Power"/>
+  <category="Sophomore"/>
+  <course="MA1 Math for Chumps" gp="4"/>
+</student>
+
+<student>
+  <name="Armand Hammer"/>
+  <category="Sophomore"/>
+  <course="PH2 Particle Bored" gp="2"/>
+  <course="CS1 Problem Solving" gp="3.5"/>
+  <course="CS6 Web Weaving" gp="3.5"/>
+</student>
+
+<student>
+  <name="Jay Walker"/>
+  <category="Sophomore"/>
+  <course="CS4 Rigorous Programming" gp="3.5"/>
+  <course="PH2 Particle Bored" gp="2.5"/>
+  <course="CS1 Problem Solving" gp="3.5"/>
+</student>
+
+<student>
+  <name="Bill Ding"/>
+  <category="Junior"/>
+  <course="CS1 Problem Solving" gp="3"/>
+</student>
+
+<student>
+  <name="Anita Bath"/>
+  <category="Freshman"/>
+  <course="MA2 Boohlean Logic" gp="3"/>
+  <course="CS1 Problem Solving" gp="3.5"/>
+  <course="CS4 Rigorous Programming" gp="4"/>
+</student>
+
+<student>
+  <name="Jean Poole"/>
+  <category="Freshman"/>
+  <course="CS4 Rigorous Programming" gp="3"/>
+  <course="MA1 Math for Chumps" gp="3"/>
+  <course="CS3 Static Programming" gp="3"/>
+</student>
+
+<faculty>
+  <name="Barry Cade"/>
+  <category="Associate Professor"/>
+  <course="CS2 Pointy Pointers"/>
+  <course="CS3 Static Programming"/>
+  <course="CS1 Problem Solving"/>
+  <course="PH2 Particle Bored"/>
+</faculty>
+
+<student>
+  <name="Kenny Duwot"/>
+  <category="Senior"/>
+  <course="CS5 Reading Core Dumps" gp="3"/>
+</student>
+
+<student>
+  <name="Tina Ryhard"/>
+  <category="Sophomore"/>
+  <course="CS2 Pointy Pointers" gp="3"/>
+  <course="CS4 Rigorous Programming" gp="2.5"/>
+  <course="PH2 Particle Bored" gp="2.5"/>
+</student>
+
+<student>
+  <name="Rose Bush"/>
+  <category="Freshman"/>
+  <course="CS2 Pointy Pointers" gp="3"/>
+</student>
+
+<student>
+  <name="Neil Down"/>
+  <category="Sophomore"/>
+  <course="PH2 Particle Bored" gp="2.5"/>
+  <course="CS4 Rigorous Programming" gp="2"/>
+</student>
+
+<student>
+  <name="Eileen Dover"/>
+  <category="Junior"/>
+  <course="PH2 Particle Bored" gp="3.5"/>
+  <course="CS5 Reading Core Dumps" gp="3.5"/>
+  <course="CS2 Pointy Pointers" gp="4"/>
+</student>
+
+<faculty>
+  <name="Barb Dwyer"/>
+  <category="Assistant Professor"/>
+  <course="MA2 Boohlean Logic"/>
+</faculty>
+
+<student>
+  <name="Duane Pipe"/>
+  <category="Senior"/>
+  <course="PH1 Perms and Waves" gp="2.5"/>
+</student>
+
+<student>
+  <name="Joe King"/>
+  <category="Freshman"/>
+  <course="PH2 Particle Bored" gp="2.5"/>
+</student>
+
+<student>
+  <name="Said Burn"/>
+  <category="Freshman"/>
+  <course="MA2 Boohlean Logic" gp="4"/>
+  <course="CS6 Web Weaving" gp="3.5"/>
+  <course="CS2 Pointy Pointers" gp="3.5"/>
+</student>
+
+<student>
+  <name="Dinah Soares"/>
+  <category="Junior"/>
+  <course="CS6 Web Weaving" gp="3.5"/>
+  <course="CS1 Problem Solving" gp="3.5"/>
+  <course="MA1 Math for Chumps" gp="3.5"/>
+</student>
+
+<student>
+  <name="Cara Van"/>
+  <category="Sophomore"/>
+  <course="PH1 Perms and Waves" gp="4"/>
+  <course="CS5 Reading Core Dumps" gp="3.5"/>
+  <course="CS6 Web Weaving" gp="2"/>
+</student>
+
+<student>
+  <name="Anna Graham"/>
+  <category="Sophomore"/>
+  <course="PH1 Perms and Waves" gp="2"/>
+  <course="CS1 Problem Solving" gp="3.5"/>
+  <course="CS4 Rigorous Programming" gp="2"/>
+</student>
+
+<student>
+  <name="Ella Mentry"/>
+  <category="Freshman"/>
+  <course="CS3 Static Programming" gp="2"/>
+</student>
+
+<student>
+  <name="Paige Turner"/>
+  <category="Junior"/>
+  <course="CS4 Rigorous Programming" gp="3.5"/>
+  <course="CS1 Problem Solving" gp="4"/>
+  <course="MA1 Math for Chumps" gp="2.5"/>
+</student>
+
+<student>
+  <name="Oliver Sutton"/>
+  <category="Sophomore"/>
+  <course="CS3 Static Programming" gp="3"/>
+  <course="CS2 Pointy Pointers" gp="2"/>
+  <course="MA2 Boohlean Logic" gp="2.5"/>
+</student>
+
+<student>
+  <name="Moe Degrass"/>
+  <category="Junior"/>
+  <course="CS5 Reading Core Dumps" gp="2.5"/>
+  <course="CS1 Problem Solving" gp="2"/>
+</student>
+
+<student>
+  <name="Scott Free"/>
+  <category="Senior"/>
+  <course="MA2 Boohlean Logic" gp="3.5"/>
+  <course="CS6 Web Weaving" gp="3"/>
+  <course="CS1 Problem Solving" gp="4"/>
+</student>
+
+<student>
+  <name="Andy Friese"/>
+  <category="Freshman"/>
+  <course="PH1 Perms and Waves" gp="3.5"/>
+  <course="CS1 Problem Solving" gp="2.5"/>
+  <course="CS3 Static Programming" gp="2"/>
+</student>
+
+<student>
+  <name="Chriss Cross"/>
+  <category="Senior"/>
+  <course="MA2 Boohlean Logic" gp="2.5"/>
+  <course="PH1 Perms and Waves" gp="3"/>
+  <course="CS1 Problem Solving" gp="4"/>
+</student>
+
+<student>
+  <name="Carrie Oakey"/>
+  <category="Senior"/>
+  <course="MA2 Boohlean Logic" gp="2"/>
+  <course="CS5 Reading Core Dumps" gp="3"/>
+  <course="CS3 Static Programming" gp="2"/>
+</student>
+
+<student>
+  <name="Anne Teak"/>
+  <category="Junior"/>
+  <course="CS4 Rigorous Programming" gp="3.5"/>
+</student>
+
+<student>
+  <name="Fran Tic"/>
+  <category="Freshman"/>
+  <course="CS1 Problem Solving" gp="3.5"/>
+  <course="CS4 Rigorous Programming" gp="2"/>
+  <course="MA1 Math for Chumps" gp="3"/>
+</student>
